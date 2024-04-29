@@ -13,6 +13,11 @@ jobs:
 
   teste:
     runs-on: ubuntu-latest
+    env: 
+      HOST: localhost
+      PORT: 5432
+      USER: root
+      DBNAME: root
     strategy:
       matrix:
         go_version: [ '1.18', '1.17', '>=1.18' ]
@@ -33,6 +38,7 @@ jobs:
       
     - name: Test
       run: go test -v main_test.go
+
   build:
     needs: teste
     runs-on: ubuntu-latest
