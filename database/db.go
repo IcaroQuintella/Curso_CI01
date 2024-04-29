@@ -23,3 +23,4 @@ func ConectaComBancoDeDados()
 
 	DB.AutoMigrate(&models.Aluno{})
 }
+
