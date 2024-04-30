@@ -17,7 +17,7 @@ jobs:
             REMOTE_PORT: ${{ secrets.REMOTE_WINOV_PORT }}
             REMOTE_HOST: ${{ secrets.REMOTE_WINOV_HOST }}
             REMOTE_USER: ${{ secrets.REMOTE_WINOV_USER }}
-            TARGET: /home/${{ secrets.REMOTE_WINOV_USER }}/CI-01/
+            TARGET: CI-01/
             EXCLUDE: "postgres-data"
 
         - name: executing remote ssh commands using password
