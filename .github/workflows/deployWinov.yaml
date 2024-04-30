@@ -7,9 +7,6 @@ jobs:
     deploy_copy:
         runs-on: ubuntu-latest
     
-        outputs:
-            commit_hash: ${{ steps.git_commit_hash.outputs.hash }}
-    
         steps:
         - uses: actions/checkout@v4 
 
