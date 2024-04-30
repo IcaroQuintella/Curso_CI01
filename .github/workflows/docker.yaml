@@ -42,7 +42,7 @@ jobs:
         push: true
         tags: icaroquintella/go_ci:${{ steps.git_commit_hash.outputs.hash }}
 
-                    
+                 
 
             
 
