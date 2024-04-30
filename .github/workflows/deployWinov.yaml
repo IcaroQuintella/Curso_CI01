@@ -14,7 +14,6 @@ jobs:
           uses: easingthemes/ssh-deploy@main
           with:
             SSH_PRIVATE_KEY: ${{ secrets.REMOTE_WINOV_PRIVATEKEY }}
-            ARGS: "-rlgoDzvc -i --delete"
             REMOTE_PORT: ${{ secrets.REMOTE_WINOV_PORT }}
             REMOTE_HOST: ${{ secrets.REMOTE_WINOV_HOST }}
             REMOTE_USER: ${{ secrets.REMOTE_WINOV_USER }}
