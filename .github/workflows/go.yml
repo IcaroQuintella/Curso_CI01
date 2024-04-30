@@ -19,17 +19,17 @@ jobs:
       USER: root
       DBNAME: root
       PASSWORD: root
-    strategy:
-      matrix:
-        go_version: [ '1.18', '1.17', '>=1.18' ]
+    # strategy:
+    #   matrix:
+    #     go_version: [ '1.18', '1.17', '>=1.18' ]
     steps:
     - uses: actions/checkout@v4
 
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
-         go-version: ${{ matrix.go_version }}
-        #go-version: '1.18'
+        # go-version: ${{ matrix.go_version }}
+        go-version: '1.18'
 
     - name: Build_DB
       run: docker-compose build
