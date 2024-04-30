@@ -8,6 +8,9 @@ jobs:
   docker:
     runs-on: ubuntu-latest
 
+    outputs:
+        commit_hash: ${{ steps.git_commit_hash.outputs.hash }}
+
     steps:
     - uses: actions/checkout@v4
 
@@ -22,6 +25,24 @@ jobs:
         username: icaroquintella
         # Password or personal access token used to log against the Docker registry
         password: ${{ secrets.PASSWORD_DOCKER_HUB }}
+
+    - name: Get Git Commit Hash
+      id: git_commit_hash
+      run: echo "::set-output name=hash::$(git rev-parse --short HEAD)"    
+
+    - name: Build and push Docker images
+        # You may pin to the exact commit or the version.
+        # uses: docker/build-push-action@2cdde995de11925a030ce8070c3d77a52ffcf1c0
+      uses: docker/build-push-action@v5.3.0
+      with:
+
+        context: # optional
+        # Path to the Dockerfile
+        file: #./Dockerfile
+        push: true
+        tags: icaroquintella/go_ci:${{ steps.git_commit_hash.outputs.hash }}
+
+                    
 
             
 
