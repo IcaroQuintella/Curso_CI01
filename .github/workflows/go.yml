@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       HOST: localhost
-      PORT: 5432
+      DBPORT: 5432
       USER: root
       DBNAME: root
       PASSWORD: root
@@ -54,8 +54,13 @@ jobs:
     - name: Build
       run: go build -v main.go   
       
-  Docker:
+  docker:
     needs: build
     uses: ./.github/workflows/docker.yaml
     secrets: inherit
 
+  deploy_winov:
+    needs: build
+    uses: ./.github/workflows/deployWinov.yaml
+    secrets: inherit
+  
