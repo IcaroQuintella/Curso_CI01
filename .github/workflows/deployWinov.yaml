@@ -35,7 +35,7 @@ jobs:
               export PASSWORD=${{ secrets.REMOTE_WINOV_DBPASSWORD }}
               export PORT=8000 
               # Executando os containers
-              sudo docker compose -f /home/${{ secrets.REMOTE_WINOV_USER }}/Curso_CI01/docker-compose.yml up -d
+              #sudo docker compose -f /home/${{ secrets.REMOTE_WINOV_USER }}/Curso_CI01/docker-compose.yml up -d
 
 
 

@@ -11,8 +11,8 @@ RUN go build -o main .
 
 # WORKDIR /app
 
-# ENV HOST=localhost DBPORT=5432
-# ENV USER=root PASSWORD=root DBNAME=root
+ ENV HOST=localhost DBPORT=5432
+ ENV USER=root PASSWORD=root DBNAME=root
 
 # COPY --from=buildStage /app/main/* .
 
