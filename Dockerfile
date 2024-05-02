@@ -1,4 +1,5 @@
-FROM golang:alpine3.19 as buildStage
+# FROM golang:alpine3.19 as buildStage
+FROM golang:alpine3.19
 
 WORKDIR /app
 
@@ -6,17 +7,16 @@ COPY . .
 
 RUN go build -o main .
 
-FROM alpine:latest
+# FROM alpine:latest
 
 # WORKDIR /app
-WORKDIR /main
 
-ENV HOST=localhost DBPORT=5432
-ENV USER=root PASSWORD=root DBNAME=root
+# ENV HOST=localhost DBPORT=5432
+# ENV USER=root PASSWORD=root DBNAME=root
 
-COPY --from=buildStage /app/main/* .
+# COPY --from=buildStage /app/main/* .
 
 EXPOSE 8000
 
 
-CMD ["main"]
+CMD ["./main"]
