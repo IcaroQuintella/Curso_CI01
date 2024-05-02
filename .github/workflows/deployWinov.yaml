@@ -33,7 +33,10 @@ jobs:
               export USER=${{ secrets.REMOTE_WINOV_DBUSER }}
               export DBNAME=${{ secrets.REMOTE_WINOV_DBNAME }}
               export PASSWORD=${{ secrets.REMOTE_WINOV_DBPASSWORD }}
-              export PORT=8000  
+              export PORT=8000 
+              # Executando os containers
+              sudo docker compose -f /home/winov/CI-01/docker-compose.yml up -d
+               
 
 
 

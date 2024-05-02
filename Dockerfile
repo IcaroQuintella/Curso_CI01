@@ -8,14 +8,15 @@ RUN go build -o main .
 
 FROM alpine:latest
 
-WORKDIR /app
+# WORKDIR /app
+WORKDIR /main
 
 ENV HOST=localhost DBPORT=5432
 ENV USER=root PASSWORD=root DBNAME=root
 
-COPY --from=buildStage /app/main .
+COPY --from=buildStage /app/main/* .
 
 EXPOSE 8000
 
 
-CMD ["/app/main"]
+CMD ["main"]
