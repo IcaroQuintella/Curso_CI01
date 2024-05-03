@@ -4,7 +4,7 @@ services:
       file: docker-compose-app.yaml
       service: app
     depends_on:
-    - postgres  
+    - db-a  
   db-a:
     extends:
       file: docker-compose-db.yaml
@@ -14,4 +14,4 @@ services:
       file: docker-compose-pgadmin.yaml
       service: pgadmin-compose
     depends_on:
-    - postgres                      
+    - db-a                      
