@@ -31,8 +31,8 @@ jobs:
         # go-version: ${{ matrix.go_version }}
         go-version: '1.18'
 
-    - name: Build_DB
-      run: docker-compose build
+    # - name: Build_DB
+    #   run: docker-compose build
 
     - name: Create-DB
       run: |
