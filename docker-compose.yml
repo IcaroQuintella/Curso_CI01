@@ -3,8 +3,10 @@ services:
     extends:
       file: docker-compose-app.yaml
       service: app
+    environment:
+      - HOST=db-a  
     depends_on:
-    - db-a  
+     - db-a  
   db-a:
     extends:
       file: docker-compose-db.yaml
@@ -14,4 +16,4 @@ services:
       file: docker-compose-pgadmin.yaml
       service: pgadmin-compose
     depends_on:
-    - db-a                      
+     - db-a                      
