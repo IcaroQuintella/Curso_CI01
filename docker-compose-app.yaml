@@ -1,8 +1,8 @@
 services:
   app:
     image: icaroquintella/go_ci:latest
-    Ports:
-    - 8080:8080
+    ports:
+      - "8080:8080"
     environment:
       - HOST=postgres 
       - DBPORT=5432
