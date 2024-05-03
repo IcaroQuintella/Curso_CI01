@@ -1,0 +1,11 @@
+services:
+  app:
+    image: icaroquintella/go_ci:${{ steps.git_commit_hash.outputs.hash }}
+    Ports:
+    - 8080:8080
+    environment:
+      - HOST=postgres 
+      - DBPORT=5432
+      - USER=root 
+      - PASSWORD=root 
+      - DBNAME=root
