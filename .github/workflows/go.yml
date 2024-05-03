@@ -37,7 +37,7 @@ jobs:
     - name: Create-DB
       run: |
        docker-compose -f  docker-compose-db.yaml up -d
-       docker-compose -f  docker-compose-pgadm.yaml up -d     
+       docker-compose -f  docker-compose-pgadmin.yaml up -d     
       
     - name: Test
       run: go test -v main_test.go
@@ -62,7 +62,7 @@ jobs:
     secrets: inherit
 
   deploy_winov:
-    needs: build
+    needs: docker
     uses: ./.github/workflows/deployWinov.yaml
     secrets: inherit
   
