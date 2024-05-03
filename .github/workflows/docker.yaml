@@ -40,6 +40,12 @@ jobs:
         # Path to the Dockerfile
         file: #./Dockerfile
         push: true
+        build-args: |
+          HOST=${{ secrets.REMOTE_WINOV_DBHOST }}
+          DBPORT=${{ secrets.REMOTE_WINOV_DBPORT }}
+          USER=${{ secrets.REMOTE_WINOV_DBUSER }}
+          DBNAME=${{ secrets.REMOTE_WINOV_DBNAME }}
+          PASSWORD:${{ secrets.REMOTE_WINOV_DBPASSWORD }}
         tags: icaroquintella/go_ci:${{ steps.git_commit_hash.outputs.hash }},icaroquintella/go_ci:latest
 
                  
