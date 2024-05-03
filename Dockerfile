@@ -5,16 +5,19 @@ WORKDIR /
 
 COPY . .
 
-RUN go build -o main .
+RUN go mod download
+RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 
 FROM alpine:latest
 
 WORKDIR /
 
-ENV HOST=10.40.0.12 DBPORT=5432
+ENV HOST=localhost DBPORT=5432
 ENV USER=root PASSWORD=root DBNAME=root
 
 COPY --from=buildStage /main .
+
+RUN apk --no-cache add ca-certificates tzdata
 
 EXPOSE 8080
 
