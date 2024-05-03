@@ -40,7 +40,7 @@ jobs:
         # Path to the Dockerfile
         file: #./Dockerfile
         push: true
-        tags: icaroquintella/go_ci:${{ steps.git_commit_hash.outputs.hash }}
+        tags: icaroquintella/go_ci:${{ steps.git_commit_hash.outputs.hash }},icaroquintella/go_ci:latest
 
                  
 

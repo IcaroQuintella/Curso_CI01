@@ -1,6 +1,6 @@
 services:
   app:
-    image: icaroquintella/go_ci:${{ steps.git_commit_hash.outputs.hash }}
+    image: icaroquintella/go_ci:latest
     Ports:
     - 8080:8080
     environment:
