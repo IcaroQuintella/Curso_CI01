@@ -14,11 +14,11 @@ jobs:
   teste:
     runs-on: ubuntu-latest
     env: 
-      HOST: ${{ secrets.REMOTE_WINOV_PRIVATEKEY }}
-      DBPORT: ${{ secrets.REMOTE_WINOV_PORT }}
-      USER: ${{ secrets.REMOTE_WINOV_HOST }}
-      DBNAME: ${{ secrets.REMOTE_WINOV_DBNAME }}
-      PASSWORD: ${{ secrets.REMOTE_WINOV_DBPASSWORD }}
+      HOST: localhost
+      DBPORT: 5432
+      USER: root
+      DBNAME: root
+      PASSWORD: root
     # strategy:
     #   matrix:
     #     go_version: [ '1.18', '1.17', '>=1.18' ]
@@ -41,7 +41,6 @@ jobs:
       
     - name: Test
       run: go test -v main_test.go
-      
 
   build:
     needs: teste
@@ -68,3 +67,4 @@ jobs:
     secrets: inherit
   
 
+    
