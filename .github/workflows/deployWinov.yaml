@@ -19,6 +19,7 @@ jobs:
             REMOTE_USER: ${{ secrets.REMOTE_WINOV_USER }}
             TARGET: /home/${{ secrets.REMOTE_WINOV_USER }}/Curso_CI01/
             EXCLUDE: "postgres-data"
+          
 
         - name: executing remote ssh commands using password
           uses: appleboy/ssh-action@v1.0.3
